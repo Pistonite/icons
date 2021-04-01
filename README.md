@@ -2,7 +2,7 @@
 Shrine schemed split icons for BotW speedrunning
 
 ## Download
-WIP
+If you just want to use the icons, see the [release page](https://github.com/iTNTPiston/botw-as-icons/releases)
 
 ## Build
 Install Pillow (for image manipulation)
