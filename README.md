@@ -1,5 +1,5 @@
 # botw-as-icons
-Shrine schemed split icons for BotW speedrunning
+Shrine-themed split icons for BotW speedrunning
 ![Shrine](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/Shrine.png)
 ![DLCShrine](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/DLCShrine.png)
 ![DoubleSword](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/DoubleSword.png)
