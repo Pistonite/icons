@@ -5,8 +5,10 @@ Shrine-themed split icons for BotW speedrunning
 ![DoubleSword](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/DoubleSword.png)
 ![Magnesis](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/Magnesis.png)
 
+These icons are based on assets from Breath of the Wild and Age of Calamity
+
 ## Download
-If you just want to use the icons, see the [release page](https://github.com/iTNTPiston/botw-as-icons/releases)
+The icons are free to use. If you just want to use the icons, see the [release page](https://github.com/iTNTPiston/botw-as-icons/releases)
 
 ## Build
 Install Pillow (for image manipulation)
