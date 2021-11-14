@@ -1,10 +1,10 @@
+#!/usr/bin/env python3
 # Build the icons from source
-from PIL import Image
 from palette import read_palettes, get_groups, colorize
 from iconio import read_icons, export_icon
 from os import scandir, path, makedirs
 
-def build(argv):
+def build():
 	palettes, template = read_palettes()
 	print(palettes)
 	print(template)
@@ -29,3 +29,4 @@ def build_palette_for_group(palette_name, palette, template, group, group_icons)
 		colorized_image = colorize(group_icons[icon_name], template, palette)
 		export_icon(colorized_image, group, icon_name, palette_name, "")
 	
+build()
