@@ -1,0 +1,80 @@
+{
+    "colors":{
+        "StandardBlue": {
+            "outline": "69a2d5",
+            "fill": "c1fefe"
+        },
+        "StandardOrange": {
+            "outline": "8c5e28",
+            "fill": "ffffb5"
+        },
+        "StandardGreen": {
+            "outline": "568c28",
+            "fill": "c8e6af"
+        },
+        "StandardPink": {
+            "outline": "d57b69",
+            "fill": "fec1d3"
+        },
+        "MalicePurple": {
+            "outline": "f24c99",
+            "fill": "ffc0fa"
+        },
+        "MasterCycleOrange": {
+            "outline": "8c5e28",
+            "fill": "ff9900"
+        }
+    },  
+    "palettes":{
+        "SheikahBlue": {
+            "background": "StandardBlue",
+            "foreground": "StandardBlue",
+            "modifier": "StandardBlue",
+            "groups": [
+                "DivineBeasts",
+                "Characters",
+                "Locations",
+                "Runes",
+                "Shrines"
+            ]
+        },
+        "SheikahOrange": {
+            "background": "StandardOrange",
+            "foreground": "StandardOrange",
+            "modifier": "StandardOrange",
+            "groups": [
+                "DivineBeasts",
+                "Characters",
+                "Locations",
+                "Runes",
+                "Shrines"
+            ]
+        },
+        "Incomplete": {
+            "background": "StandardBlue",
+            "foreground": "StandardOrange",
+            "modifier": "StandardOrange",
+            "groups": [
+                "DivineBeasts",
+                "Characters",
+                "Locations",
+                "Runes",
+                "Shrines"
+            ]
+        }
+    },
+    "template": {
+        "background": {
+            "outline": "008000",
+            "fill": "d93600"
+        },
+        "foreground": {
+            "outline": "000000",
+            "fill": "808080"
+        },
+        "modifier": {
+            "outline": "0000ff",
+            "fill": "fdfdfd"
+        }
+    }
+}
