@@ -23,6 +23,22 @@
         "MasterCycleOrange": {
             "outline": "8c5e28",
             "fill": "ff9900"
+        },
+        "MedohGreen": {
+            "outline": "568c28",
+            "fill": "fdfdfd"
+        },
+        "NaborisOrange": {
+            "outline": "8c5e28",
+            "fill": "fdfdfd"
+        },
+        "RutaBlue": {
+            "outline": "69a2d5",
+            "fill": "fdfdfd"
+        },
+        "RudaniaRed": {
+            "outline": "d57b69",
+            "fill": "fdfdfd"
         }
     },  
     "palettes":{
@@ -60,6 +76,26 @@
             "background": "MasterCycleOrange",
             "foreground": "MasterCycleOrange",
             "modifier": "MasterCycleOrange"
+        },
+        "Medoh": {
+            "background": "StandardGreen",
+            "foreground": "MedohGreen",
+            "modifier": "MedohGreen"
+        },
+        "Ruta": {
+            "background": "StandardBlue",
+            "foreground": "RutaBlue",
+            "modifier": "RutaBlue"
+        },
+        "Naboris": {
+            "background": "StandardOrange",
+            "foreground": "NaborisOrange",
+            "modifier": "NaborisOrange"
+        },
+        "Rudania": {
+            "background": "StandardPink",
+            "foreground": "RudaniaRed",
+            "modifier": "RudaniaRed"
         }
     },
     "template": {

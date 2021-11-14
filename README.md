@@ -3,7 +3,9 @@ Shrine-themed split icons for BotW speedrunning
 ![Shrine](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/Shrine.png)
 ![DLCShrine](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/DLCShrine.png)
 ![DoubleSword](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/DoubleSword.png)
-![Magnesis](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/Magnesis.png)
+![Ruta](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/Ruta.png)
+![Zelda](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/Zelda.png)
+![StasisPlus](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/StasisPlus.png)
 
 These icons are inspired by assets from Breath of the Wild and Age of Calamity
 
