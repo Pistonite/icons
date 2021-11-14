@@ -3,9 +3,15 @@ from PIL import Image
 from os import scandir, path, makedirs
 
 def read_icons():
+	return read_icon_dir("icons")
+
+def read_modifiers():
+	return read_icon_dir("modifiers")
+
+def read_icon_dir(directory):
 	# Create empty dictionary
 	icons = {}
-	icons_dir = path.join("src", "icons")
+	icons_dir = path.join("src", directory)
 	groups = scandir(icons_dir)
 	for group in groups:
 		if group.is_dir:
@@ -27,8 +33,8 @@ def read_icon_group(group_path, group_name):
 def remove_extension(filename):
 	return path.splitext(filename)[0]
 
-def export_icon(image, group, icon, palette, modifier):
-	print("Exporting", group, "/", palette, modifier, icon)
+def export_icon(image, group, palette, icon, modifier):
+	print("Exporting", palette, ":", group, "/", icon, "(", modifier, ")")
 	icon_name = icon + "_" + palette + "_" + modifier + ".png"
 	icon_dir = path.join("build", group, icon)
     
@@ -37,3 +43,4 @@ def export_icon(image, group, icon, palette, modifier):
 
 	icon_path = path.join("build", group, icon, icon_name)
 	image.save(icon_path)
+

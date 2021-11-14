@@ -40,6 +40,26 @@
             "background": "StandardBlue",
             "foreground": "StandardOrange",
             "modifier": "StandardOrange"
+        },
+        "SheikahGreen": {
+            "background": "StandardGreen",
+            "foreground": "StandardGreen",
+            "modifier": "StandardGreen"
+        },
+        "SheikahPink": {
+            "background": "StandardPink",
+            "foreground": "StandardPink",
+            "modifier": "StandardPink"
+        },
+        "Malice": {
+            "background": "MalicePurple",
+            "foreground": "MalicePurple",
+            "modifier": "MalicePurple"
+        },
+        "MasterCycle": {
+            "background": "MasterCycleOrange",
+            "foreground": "MasterCycleOrange",
+            "modifier": "MasterCycleOrange"
         }
     },
     "template": {

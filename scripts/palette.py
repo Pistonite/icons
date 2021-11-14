@@ -1,4 +1,3 @@
-from PIL import Image
 import json
 
 def open_palette(path):
@@ -81,16 +80,6 @@ def get_groups(obj):
 		return obj[KEY_GROUPS]
 	else:
 		return None
-
-
-def colorize(template_image, template, palette):
-	colorized_image = Image.new('RGBA',(template_image.width, template_image.height))
-	for x in range(template_image.width):
-		for y in range(template_image.height):
-			pixel = template_image.getpixel((x,y))
-			transformed_pixel = transform_pixel(pixel, template, palette)
-			colorized_image.putpixel((x,y), transformed_pixel)
-	return colorized_image
 
 def transform_pixel(original_pixel, template, palette):
 	if original_pixel == get_outline(get_background(template)):
