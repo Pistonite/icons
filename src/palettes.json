@@ -29,38 +29,17 @@
         "SheikahBlue": {
             "background": "StandardBlue",
             "foreground": "StandardBlue",
-            "modifier": "StandardBlue",
-            "groups": [
-                "DivineBeasts",
-                "Characters",
-                "Locations",
-                "Runes",
-                "Shrines"
-            ]
+            "modifier": "StandardBlue"
         },
         "SheikahOrange": {
             "background": "StandardOrange",
             "foreground": "StandardOrange",
-            "modifier": "StandardOrange",
-            "groups": [
-                "DivineBeasts",
-                "Characters",
-                "Locations",
-                "Runes",
-                "Shrines"
-            ]
+            "modifier": "StandardOrange"
         },
         "Incomplete": {
             "background": "StandardBlue",
             "foreground": "StandardOrange",
-            "modifier": "StandardOrange",
-            "groups": [
-                "DivineBeasts",
-                "Characters",
-                "Locations",
-                "Runes",
-                "Shrines"
-            ]
+            "modifier": "StandardOrange"
         }
     },
     "template": {

@@ -77,7 +77,10 @@ def get_foreground(obj):
 def get_modifier(obj):
 	return obj[KEY_MODIFIER]
 def get_groups(obj):
-	return obj[KEY_GROUPS]
+	if KEY_GROUPS in obj.keys():
+		return obj[KEY_GROUPS]
+	else:
+		return None
 
 
 def colorize(template_image, template, palette):

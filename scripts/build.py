@@ -15,7 +15,12 @@ def build(argv):
 
 def build_palette(palette_name, palette, template, icons):
 	# Build the palette for each group
-	for group in get_groups(palette):
+	if get_groups(palette) == None:
+		groups = icons.keys()
+	else:
+		groups = get_groups(palette)
+
+	for group in groups:
 		build_palette_for_group(palette_name, palette, template, group, icons[group])
 
 def build_palette_for_group(palette_name, palette, template, group, group_icons):

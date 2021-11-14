@@ -59,7 +59,7 @@ Example:
 }
 ```
 
-Here, `SheikahBlue` is the name of the palette, `StandardBlue` is the name of the color (see next section). `groups` defines which groups of icons this palette should be applied to when building.
+Here, `SheikahBlue` is the name of the palette, `StandardBlue` is the name of the color (see next section). `groups` defines which groups of icons this palette should be applied to when building. If `groups` is not defined, the palette automatically applies to all groups.
 
 You can add a palette by adding a new entry to `palettes` like this:
 
