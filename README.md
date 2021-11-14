@@ -12,7 +12,6 @@ These icons are inspired by assets from Breath of the Wild and Age of Calamity
 ## Download
 The icons are free to use. If you just want to use the icons, see the [release page](https://github.com/iTNTPiston/botw-as-icons/releases)
 
-
 The pre-bulit icons include a limited set of colors (defined [here](https://github.com/iTNTPiston/botw-as-icons/blob/main/src/palettes.json)). If you want to use a different combination of colors, you can edit the palette definition yourself. See the [Customization](https://github.com/iTNTPiston/botw-as-icons#Customization) section below
 
 ## Build
