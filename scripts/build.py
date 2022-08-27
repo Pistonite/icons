@@ -3,7 +3,6 @@
 from PIL import Image
 from palette import read_palettes, get_groups, transform_pixel
 from iconio import read_icons, read_modifiers, export_icon
-from os import scandir, path, makedirs
 
 def build():
 	palettes, template = read_palettes()
@@ -58,5 +57,6 @@ def build_images(palette, template, template_icon, modifiers, palette_name, grou
 						transformed_pixel = transform_pixel(modifier_pixel, template, palette)
 						colorized_icon_with_modifier.putpixel((x,y), transformed_pixel)
 			export_icon(colorized_icon_with_modifier, group_name, palette_name, icon_name, modifier_name)
-	
-build()
+
+if __name__ == "__main__":
+	build()

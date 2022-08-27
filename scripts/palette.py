@@ -1,4 +1,5 @@
-import json
+import yaml
+from PIL import Image
 
 def open_palette(path):
 	palette = Image.open(path)
@@ -8,7 +9,7 @@ def open_palette(path):
 	color4 = palette.getpixel((palette.width/2, palette.width/2))
 	return (color1, color2, color3, color4)
 
-PALETTE_CONFIG = "src/palettes.json"
+PALETTE_CONFIG = "src/palettes.yaml"
 KEY_BACKGROUND = "background"
 KEY_FOREGROUND = "foreground"
 KEY_MODIFIER = "modifier"
@@ -17,8 +18,8 @@ KEY_FILL = "fill"
 KEY_GROUPS = "groups"
 
 def read_palettes():
-	config_file = open(PALETTE_CONFIG)
-	config = json.load(config_file)
+	with open(PALETTE_CONFIG, "r", encoding="utf-8") as config_file:
+		config = yaml.load(config_file, yaml.Loader)
 	# Parse Colors
 	colors = {}
 	config_colors = config["colors"]
