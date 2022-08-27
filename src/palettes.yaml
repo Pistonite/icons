@@ -33,7 +33,7 @@ colors:
     outline: "cfa240"
     fill: "ffd700"
   Black:
-    outline: "cccccc"
+    outline: "cfa240"
     fill: "000000"
 palettes:
   SheikahBlue:

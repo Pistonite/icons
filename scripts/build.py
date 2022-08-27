@@ -3,16 +3,20 @@
 from PIL import Image
 from palette import read_palettes, get_groups, transform_pixel
 from iconio import read_icons, read_modifiers, export_icon
+from multiprocessing import Pool
 
-def build():
+MULTI = 15
+
+JOBS = []
+def add_job_build():
 	palettes, template = read_palettes()
 	icons = read_icons()
 	modifiers = read_modifiers()
 	# Build each palette
 	for palette_name in palettes:
-		build_palette(palettes[palette_name], template, icons, modifiers, palette_name)
+		add_job_build_palette(palettes[palette_name], template, icons, modifiers, palette_name)
 
-def build_palette(palette, template, icons, modifiers, palette_name):
+def add_job_build_palette(palette, template, icons, modifiers, palette_name):
 	# Build the palette for each group
 	if get_groups(palette) == None:
 		groups = icons.keys()
@@ -20,12 +24,12 @@ def build_palette(palette, template, icons, modifiers, palette_name):
 		groups = get_groups(palette)
 
 	for group_name in groups:
-		build_palette_for_group(palette, template, icons[group_name], modifiers, palette_name, group_name)
+		add_job_build_palette_for_group(palette, template, icons[group_name], modifiers, palette_name, group_name)
 
-def build_palette_for_group(palette, template, group_icons, modifiers, palette_name, group_name):
+def add_job_build_palette_for_group(palette, template, group_icons, modifiers, palette_name, group_name):
 	# Build for each icon in group
 	for icon_name in group_icons:
-		build_images(palette, template, group_icons[icon_name], modifiers, palette_name, group_name, icon_name)
+		JOBS.append((palette, template, group_icons[icon_name], modifiers, palette_name, group_name, icon_name))
 
 def build_images(palette, template, template_icon, modifiers, palette_name, group_name, icon_name):
 	colorized_icon = Image.new('RGBA',(template_icon.width, template_icon.height))
@@ -58,5 +62,15 @@ def build_images(palette, template, template_icon, modifiers, palette_name, grou
 						colorized_icon_with_modifier.putpixel((x,y), transformed_pixel)
 			export_icon(colorized_icon_with_modifier, group_name, palette_name, icon_name, modifier_name)
 
+def build_job(job):
+	palette, template, template_icon, modifiers, palette_name, group_name, icon_name = job
+	build_images(palette, template, template_icon, modifiers, palette_name, group_name, icon_name)
+
 if __name__ == "__main__":
-	build()
+	add_job_build()
+	if MULTI < 2:
+		for job in JOBS:
+			build_job(job)
+	else:
+		with Pool(MULTI) as p:
+			p.map(build_job, JOBS)
