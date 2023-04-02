@@ -1,103 +1,47 @@
-# botw-as-icons
-Shrine-themed split icons for BotW speedrunning
-![Shrine](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/Shrine.png)
-![DLCShrine](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/DLCShrine.png)
-![DoubleSword](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/DoubleSword.png)
-![Ruta](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/Ruta.png)
-![Zelda](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/Zelda.png)
-![StasisPlus](https://github.com/iTNTPiston/botw-as-icons/blob/main/sample/StasisPlus.png)
+# piston-icons
+Shrine-themed split icons for BotW speedrunning (originally `botw-as-icons`)
+![Shrine](https://icons.pistonite.org/img/shrine.shrine.std_blue.none.png)
+![DLCShrine](https://icons.pistonite.org/img/shrine.dlc_shrine.incomplete.none.png)
+![DoubleSword](https://icons.pistonite.org/img/shrine.double_sword.malice.none.png)
+![Ruta](https://icons.pistonite.org/img/location.ruta.ruta.none.png)
+![Zelda](https://icons.pistonite.org/img/character.zelda.medoh.none.png)
+![StasisPlus](https://icons.pistonite.org/palette/rune.stasis.std_orange.std_orange.naboris_orange.plus.png)
 
-These icons are inspired by assets from Breath of the Wild and Age of Calamity
+These icons are inspired by assets from Breath of the Wild and Age of Calamity.
 
-## Download
-The icons are free to use. If you just want to use the icons, see the [release page](https://github.com/iTNTPiston/botw-as-icons/releases)
+Check out all available icons [here](https://icons.pistonite.org)
 
-The pre-bulit icons include a limited set of colors (defined [here](https://github.com/iTNTPiston/botw-as-icons/blob/main/src/palettes.json)). If you want to use a different combination of colors, you can edit the palette definition yourself. See the [Customization](https://github.com/iTNTPiston/botw-as-icons#Customization) section below
-
-## Build
-You need to have Python 3 installed, then follow the steps
-
-Install pip
+## Development
+### Setup
+This app uses a React front end and a FastAPI server, and is containerized with Docker.
 ```
-sudo apt-get update
-sudo apt-get install python3-pip
-```
-Install Pillow (for image manipulation)
-```
-python3 -m pip install --upgrade pip
-python3 -m pip install --upgrade Pillow
-```
-Use the scripts to build the icons. Output will be in the "build" directory
-```
-scripts/build.py
+pip install -r requirements.txt
+npm i
 ```
 
-## Customization
-This section explains how to customize the color by editing [palettes.json](https://github.com/iTNTPiston/botw-as-icons/blob/main/src/palettes.json)
-
-If you feel like a palette/color should be included, feel free to submit a pull request
-
-### Adding a Palette
-A palette defines the background, foreground, and modifier color of the icon.
-
-Background is the color of the diamond shaped frame, foreground is the icon, and modifier is the white symbol (plus, circle, etc)
-
-Example:
+### Build
+To build the docker image, run
 ```
-"palettes":{
-    "SheikahBlue":{
-        "background": "StandardBlue",
-        "foreground": "StandardBlue",
-        "modifier": "StandardBlue",
-        "groups": [
-            "DivineBeasts",
-            "Characters",
-            "Locations",
-            "Runes",
-            "Shrines"
-        ]
-    }
-}
+rm -rf public/img
+python service/main.py
+npm run build
+docker build -t itntpiston/piston-icons .
+```
+The image can be pushed to DockerHub with
+```
+docker push itntpiston/piston-icons
 ```
 
-Here, `SheikahBlue` is the name of the palette, `StandardBlue` is the name of the color (see next section). `groups` defines which groups of icons this palette should be applied to when building. If `groups` is not defined, the palette automatically applies to all groups.
-
-You can add a palette by adding a new entry to `palettes` like this:
-
+### Local Testing
+If assets/palettes are changed/added, you need to rebuild the static images first
 ```
-"palettes":{
-    "SheikahBlue":{
-        "background": "StandardBlue",
-        "foreground": "StandardBlue",
-        "modifier": "StandardBlue",
-        "groups": [
-            "DivineBeasts",
-            "Characters",
-            "Locations",
-            "Runes",
-            "Shrines"
-        ]
-    },
-    "NewPalette":{
-        "background": "YourColor",
-        "foreground": "YourColor",
-        "modifier": "YourColor",
-        "groups": [
-            "YourGroups"
-        ]
-    }
-}
+python service/main.py
 ```
-
-### Adding a color
-You can add a color by changing the `colors` section of `palettes.json`. Example:
+To start the server
 ```
-"colors":{
-    "StandardBlue":{
-        "outline": "69a2d5",
-        "fill": "c1fefe"
-    }
-}
+LOCAL_DEV=1 && uvicorn service.main:app
 ```
-
-Here, `StandardBlue` is the name of the color, to be referenced by the palettes. The `outline` and `fill` defines the color in hex (rrggbb). Only 6-digit hex string works
+To start the client (webpack dev server)
+```
+npm run start
+``` 

@@ -1,0 +1,101 @@
+colors:
+  std_blue:
+    outline: "69a2d5"
+    fill: "c1fefe"
+  std_orange:
+    outline: "8c5e28"
+    fill: "ffffb5"
+  std_green:
+    outline: "568c28"
+    fill: "c8e6af"
+  std_pink:
+    outline: "d57b69"
+    fill: "fec1d3"
+  malice_purple:
+    outline: "f24c99"
+    fill: "ffc0fa"
+  deep_orange:
+    outline: "8c5e28"
+    fill: "ff9900"
+  medoh_green:
+    outline: "568c28"
+    fill: "fdfdfd"
+  naboris_orange:
+    outline: "8c5e28"
+    fill: "fdfdfd"
+  ruta_blue:
+    outline: "69a2d5"
+    fill: "fdfdfd"
+  rudania_red:
+    outline: "d57b69"
+    fill: "fdfdfd"
+  light_gold:
+    outline: "cfa240"
+    fill: "ffd700"
+  dark_gold:
+    outline: "cfa240"
+    fill: "000000"
+palettes:
+  std_blue:
+    bg: std_blue
+    fg: std_blue
+    mod: std_blue
+  std_orange:
+    bg: std_orange
+    fg: std_orange
+    mod: std_orange
+  incomplete: 
+    bg: std_blue
+    fg: std_orange
+    mod: std_orange
+  std_green: 
+    bg: std_green
+    fg: std_green
+    mod: std_green
+  std_pink: 
+    bg: std_pink
+    fg: std_pink
+    mod: std_pink
+  malice: 
+    bg: malice_purple
+    fg: malice_purple
+    mod: malice_purple
+  master_cycle: 
+    bg: deep_orange
+    fg: deep_orange
+    mod: deep_orange
+  medoh: 
+    bg: std_green
+    fg: medoh_green
+    mod: medoh_green
+  ruta: 
+    bg: std_blue
+    fg: ruta_blue
+    mod: ruta_blue
+  naboris: 
+    bg: std_orange
+    fg: naboris_orange
+    mod: naboris_orange
+  rudania: 
+    bg: std_pink
+    fg: rudania_red
+    mod: rudania_red
+  gold: 
+    bg: light_gold
+    fg: naboris_orange
+    mod: naboris_orange
+  dark_gold: 
+    bg: dark_gold
+    fg: dark_gold
+    mod: dark_gold
+
+template:
+  bg:
+    outline: "008000"
+    fill: "d93600"
+  fg:
+    outline: "000000"
+    fill: "808080"
+  mod:
+    outline: "0000ff"
+    fill: "fdfdfd"
