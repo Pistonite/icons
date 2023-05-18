@@ -21,3 +21,6 @@ server:
 
 client:
     npm run dev
+
+clean:
+    rm -rf node_modules target
