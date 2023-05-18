@@ -1,3 +1,5 @@
+set windows-powershell:=true
+
 install:
     rustup update
     cargo install cargo-watch
