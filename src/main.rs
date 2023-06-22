@@ -49,7 +49,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     app.at("/icons").get(get_icons);
     log::info!("Setting up static files");
     app.at("/").serve_dir(static_dir)?;
-    log::info!("Setting up index.heml");
+    log::info!("Setting up index.html");
     app.at("/").serve_file(format!("{}index.html", static_dir))?;
     log::info!("Ready to start listening");
     app.listen(address).await?;
