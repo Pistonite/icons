@@ -36,7 +36,7 @@ just install
 |-|-|
 |`just server`|Run the server in watch mode (`cargo run` to run in non-watch mode)|
 |`just client`|Run the client in watch mode.|
-|`just bc`|Build the client.|
+|`just build`|Build the client.|
 |`just docker`|Build the docker image (may require `sudo`)|
 
 Note that the server also serves frontend files. If you are not changing the client, you can build the client and only run the server for testing.

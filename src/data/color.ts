@@ -21,7 +21,7 @@ export const Colors = {
     StandardOrange: defineColor("8c5e28", "ffffb5"),
     StandardGreen: defineColor("568c28", "c8e6af"),
     StandardPink: defineColor("d57b69", "fec1d3"),
-    StandardPurple: defineColor("644073", "b04beb"),
+    StandardPurple: defineColor("613b75", "b96cf5"),
     StandardGray: defineColor("333333", "eeeeee"),
     MalicePurple: defineColor("f24c99", "ffc0fa"),
     DeepOrange: defineColor("8c5e28", "ff9900"),
