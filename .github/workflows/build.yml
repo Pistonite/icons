@@ -22,7 +22,7 @@ jobs:
         node-version: 18.x
     - uses: Swatinem/rust-cache@v2
     - run: npm ci
-    - run: task build:client --output group
+    - run: task client:build --output group
     - uses: actions/upload-artifact@v4
       with:
         path: target/frontend
