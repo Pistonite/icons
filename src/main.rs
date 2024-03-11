@@ -42,7 +42,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     app.with(CorsMiddleware::new());
     log::info!("Setting up logging");
     app.with(tide::log::LogMiddleware::new());
-    
+
     log::info!("Setting up /icon");
     app.at("/icon/:icon").get(get_icon);
     log::info!("Setting up /icons");
@@ -50,7 +50,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     log::info!("Setting up static files");
     app.at("/").serve_dir(static_dir)?;
     log::info!("Setting up index.html");
-    app.at("/").serve_file(format!("{}index.html", static_dir))?;
+    app.at("/")
+        .serve_file(format!("{}index.html", static_dir))?;
     log::info!("Ready to start listening");
     app.listen(address).await?;
     Ok(())
@@ -82,7 +83,11 @@ async fn get_icon(req: tide::Request<State>) -> tide::Result {
     let res = tide::Response::builder(200)
         .body(icon)
         .content_type(Mime::from_str("image/x-png").unwrap())
-        .header("Cache-Control", format!("public, max-age={IMAGE_CACHE_AGE}"))
+        .header("Access-Control-Allow-Origin", "*")
+        .header(
+            "Cache-Control",
+            format!("public, max-age={IMAGE_CACHE_AGE}"),
+        )
         .header("Expires", IMAGE_CACHE_AGE.to_string())
         .build();
 
@@ -91,12 +96,17 @@ async fn get_icon(req: tide::Request<State>) -> tide::Result {
 
 async fn get_icons(req: tide::Request<State>) -> tide::Result {
     let icon_names = req.state().get_icon_names().await;
-    let json = serde_json::to_string(&icon_names).ok().ok_or_else(internal_error)?;
+    let json = serde_json::to_string(&icon_names)
+        .ok()
+        .ok_or_else(internal_error)?;
 
     let res = tide::Response::builder(200)
         .body(json)
         .content_type(Mime::from_str("application/json").unwrap())
-        .header("Cache-Control", format!("public, max-age={OTHER_CACHE_AGE}"))
+        .header(
+            "Cache-Control",
+            format!("public, max-age={OTHER_CACHE_AGE}"),
+        )
         .header("Expires", OTHER_CACHE_AGE.to_string())
         .build();
 

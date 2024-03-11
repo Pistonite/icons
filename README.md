@@ -12,37 +12,13 @@ These icons are inspired by assets from Breath of the Wild and Age of Calamity.
 
 Check out all available icons [here](https://icons.pistonite.org)
 
-# Tech Stack
-This project uses [http-rs/tide](https://github.com/http-rs/tide) on the backend for icon manipulation,
-and uses [vite](https://vitejs.dev/) + [TypeScript](https://www.typescriptlang.org/) + [React](https://reactjs.org/) on the frontend
-for the icon picker web app.
-
-The app is dockerized with an alpine image for efficiency. Check it out on [DockerHub](https://hub.docker.com/repository/docker/pistonite/icons/general)
 # Development
 
-## Requirements
-Install nodejs and cargo, then install Just:
-```
-cargo install just
-```
+## Tools
+Make sure you have the following tools:
+- A Rust toolchain
+- NodeJS
+- [task](https://taskfile.dev), used to run commands. 
 
-Install other cargo and npm dependencies
-```
-just install
-```
-
-## Workflows
-|Command|Usage|
-|-|-|
-|`just server`|Run the server in watch mode (`cargo run` to run in non-watch mode)|
-|`just client`|Run the client in watch mode.|
-|`just build`|Build the client.|
-|`just docker`|Build the docker image (may require `sudo`)|
-
-Note that the server also serves frontend files. If you are not changing the client, you can build the client and only run the server for testing.
-
-## Docker
-To push the docker image:
-```
-docker push pistonite/icons
-```
+Once you install those, run `task install` to install the tools and packages.
+Then, run `task --list` to see the commands

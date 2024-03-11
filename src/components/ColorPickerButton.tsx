@@ -1,14 +1,24 @@
-import { IColor, DefaultButton, Label, Callout, DirectionalHint, ComboBox, SelectableOptionMenuItemType, Stack, ColorPicker } from "@fluentui/react";
+import {
+    IColor,
+    DefaultButton,
+    Label,
+    Callout,
+    DirectionalHint,
+    ComboBox,
+    SelectableOptionMenuItemType,
+    Stack,
+    ColorPicker,
+} from "@fluentui/react";
 import { useId } from "@fluentui/react-hooks";
 import React, { useEffect, useMemo, useState } from "react";
 import { Colors, ColorName, toDisplayName, ColorDef } from "../data";
 import { Section } from "./Section";
 
 type ColorPickerButtonProps = {
-    color: ColorName | ColorDef,
-    setColor: (color: ColorName | ColorDef) => void,
-    text: string,
-}
+    color: ColorName | ColorDef;
+    setColor: (color: ColorName | ColorDef) => void;
+    text: string;
+};
 
 const getColorSpriteStyle = (color: IColor) => {
     return {
@@ -23,27 +33,30 @@ const getColorSpriteStyle = (color: IColor) => {
 const ColorOptions = [
     ...Object.keys(Colors).map((color) => ({
         key: color,
-        text: toDisplayName(color)
+        text: toDisplayName(color),
     })),
     {
         key: "divider",
         text: "-",
-        itemType: SelectableOptionMenuItemType.Divider
+        itemType: SelectableOptionMenuItemType.Divider,
     },
     {
         key: "Custom",
-        text: "Custom"
-    }
-]
+        text: "Custom",
+    },
+];
 
-export const ColorPickerButton: React.FC<ColorPickerButtonProps> = ({color, text, setColor}) => {
+export const ColorPickerButton: React.FC<ColorPickerButtonProps> = ({
+    color,
+    text,
+    setColor,
+}) => {
     const [isCalloutOpen, setIsCalloutOpen] = useState(false);
     const id = useId("color-picker-button");
 
-
     const [selectedColorName, selectedOutline, selectedFill] = useMemo(() => {
         if (typeof color === "string") {
-            const {outline, fill} = Colors[color];   
+            const { outline, fill } = Colors[color];
             return [color, outline, fill] as const;
         }
         return ["Custom", color.outline, color.fill] as const;
@@ -51,7 +64,9 @@ export const ColorPickerButton: React.FC<ColorPickerButtonProps> = ({color, text
 
     // Update internal selection when the color is changed from outside
     // but does not update the color outside when internal selection is changed
-    const [selectedColorInternal, setSelectedColorInternal] = useState<ColorName | "Custom">(selectedColorName);
+    const [selectedColorInternal, setSelectedColorInternal] = useState<
+        ColorName | "Custom"
+    >(selectedColorName);
     useEffect(() => {
         setSelectedColorInternal(selectedColorName);
     }, [selectedColorName]);
@@ -68,29 +83,28 @@ export const ColorPickerButton: React.FC<ColorPickerButtonProps> = ({color, text
 
     return (
         <>
-            <Label>
-                {text}
-            </Label>
-            <DefaultButton id={id} styles={{
-                root: {
-                    boxSizing: "border-box",
-                    width: "100%",
-                    marginBottom: 4
-                }
-            
-            }} onClick={()=> {
-                setSelectedColorInternal(selectedColorName);
-                setOutlineInternal(selectedOutline);
-                setFillInternal(selectedFill);
-                setIsCalloutOpen(true);
-            }}>
-            
-                <span style={getColorSpriteStyle(selectedOutline)} >&nbsp;</span>
-                <span style={getColorSpriteStyle(selectedFill)} >&nbsp;</span>
+            <Label>{text}</Label>
+            <DefaultButton
+                id={id}
+                styles={{
+                    root: {
+                        boxSizing: "border-box",
+                        width: "100%",
+                        marginBottom: 4,
+                    },
+                }}
+                onClick={() => {
+                    setSelectedColorInternal(selectedColorName);
+                    setOutlineInternal(selectedOutline);
+                    setFillInternal(selectedFill);
+                    setIsCalloutOpen(true);
+                }}
+            >
+                <span style={getColorSpriteStyle(selectedOutline)}>&nbsp;</span>
+                <span style={getColorSpriteStyle(selectedFill)}>&nbsp;</span>
                 {toDisplayName(selectedColorName)}
             </DefaultButton>
-            {
-                isCalloutOpen && 
+            {isCalloutOpen && (
                 <Callout
                     target={`#${id}`}
                     role="dialog"
@@ -98,7 +112,7 @@ export const ColorPickerButton: React.FC<ColorPickerButtonProps> = ({color, text
                         if (selectedColorInternal !== "Custom") {
                             setColor(selectedColorInternal);
                         } else {
-                            setColor({outline, fill});
+                            setColor({ outline, fill });
                         }
                         setIsCalloutOpen(false);
                     }}
@@ -106,7 +120,10 @@ export const ColorPickerButton: React.FC<ColorPickerButtonProps> = ({color, text
                     directionalHint={DirectionalHint.rightCenter}
                 >
                     <Section>
-                        <Stack horizontal styles={{root: {alignItems: "end"}}}>
+                        <Stack
+                            horizontal
+                            styles={{ root: { alignItems: "end" } }}
+                        >
                             <ComboBox
                                 selectedKey={selectedColorInternal}
                                 label="Select a built-in Color or customize it below"
@@ -114,32 +131,39 @@ export const ColorPickerButton: React.FC<ColorPickerButtonProps> = ({color, text
                                 styles={{
                                     root: {
                                         maxWidth: 300,
-                                        margin: "4px"
-                                    }
+                                        margin: "4px",
+                                    },
                                 }}
                                 onChange={(_, option) => {
-                                    if (option){
-                                        setSelectedColorInternal(option.key.toString() as ColorName | "Custom");
+                                    if (option) {
+                                        setSelectedColorInternal(
+                                            option.key.toString() as
+                                                | ColorName
+                                                | "Custom",
+                                        );
                                     }
                                 }}
-
                             />
-                            <DefaultButton primary styles={{
-                                root: {
-                                    margin: "4px"
-                                }
-                            }} onClick = {() => {
-                                if (selectedColorInternal !== "Custom") {
-                                    setColor(selectedColorInternal);
-                                } else {
-                                    setColor({outline, fill});
-                                }
-                                setIsCalloutOpen(false);
-                            }}>
+                            <DefaultButton
+                                primary
+                                styles={{
+                                    root: {
+                                        margin: "4px",
+                                    },
+                                }}
+                                onClick={() => {
+                                    if (selectedColorInternal !== "Custom") {
+                                        setColor(selectedColorInternal);
+                                    } else {
+                                        setColor({ outline, fill });
+                                    }
+                                    setIsCalloutOpen(false);
+                                }}
+                            >
                                 Apply
                             </DefaultButton>
                         </Stack>
-                        
+
                         <Stack horizontal>
                             <div>
                                 <Label>Outline</Label>
@@ -167,10 +191,8 @@ export const ColorPickerButton: React.FC<ColorPickerButtonProps> = ({color, text
                             </div>
                         </Stack>
                     </Section>
-                    
                 </Callout>
-            }
+            )}
         </>
-        
     );
 };

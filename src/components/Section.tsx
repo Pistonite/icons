@@ -1,7 +1,7 @@
 import { Stack } from "@fluentui/react";
 import React, { PropsWithChildren } from "react";
 
-export const Section: React.FC<PropsWithChildren> = ({children}) => {
+export const Section: React.FC<PropsWithChildren> = ({ children }) => {
     return (
         <Stack
             styles={{
