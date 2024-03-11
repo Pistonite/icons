@@ -4,7 +4,7 @@ pub struct Palette {
     pub center_outline: [u8; 4],
     pub center_fill: [u8; 4],
     pub mod_outline: [u8; 4],
-    pub mod_fill: [u8; 4]
+    pub mod_fill: [u8; 4],
 }
 
 impl Palette {
@@ -15,7 +15,7 @@ impl Palette {
             center_outline: decode_hex(&colors.center_outline)?,
             center_fill: decode_hex(&colors.center_fill)?,
             mod_outline: decode_hex(&colors.mod_outline)?,
-            mod_fill: decode_hex(&colors.mod_fill)?
+            mod_fill: decode_hex(&colors.mod_fill)?,
         })
     }
 }
@@ -26,7 +26,7 @@ pub struct HexColors {
     pub center_outline: String,
     pub center_fill: String,
     pub mod_outline: String,
-    pub mod_fill: String
+    pub mod_fill: String,
 }
 
 impl HexColors {
@@ -40,12 +40,10 @@ impl HexColors {
             center_outline: colors[2].to_string(),
             center_fill: colors[3].to_string(),
             mod_outline: colors[4].to_string(),
-            mod_fill: colors[5].to_string()
+            mod_fill: colors[5].to_string(),
         })
     }
 }
-
-
 
 fn decode_hex(hex: &str) -> Option<[u8; 4]> {
     if hex.len() != 6 {
@@ -54,9 +52,9 @@ fn decode_hex(hex: &str) -> Option<[u8; 4]> {
     let mut bytes = [0; 4];
     bytes[3] = 255;
     for i in 0..3 {
-        bytes[i] = match u8::from_str_radix(&hex[i*2..i*2+2], 16) {
+        bytes[i] = match u8::from_str_radix(&hex[i * 2..i * 2 + 2], 16) {
             Ok(byte) => byte,
-            Err(_) => return None
+            Err(_) => return None,
         };
     }
     Some(bytes)

@@ -3,9 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 import { PaletteDef, Colors } from "./color";
 
 export const useApiIcons = (): string[] => {
-    const {isLoading, isError, error, data} = useQuery({
+    const { isLoading, isError, error, data } = useQuery({
         queryKey: ["icons"],
-        queryFn: async () => (await axios.get<string[]>("/icons")).data
+        queryFn: async () => (await axios.get<string[]>("/icons")).data,
     });
 
     if (isLoading) {
@@ -17,7 +17,7 @@ export const useApiIcons = (): string[] => {
         return [];
     }
 
-    const data2 = data.map(icon => icon.replace("/", "."));
+    const data2 = data.map((icon) => icon.replace("/", "."));
     data2.sort();
     return data2;
 };
@@ -38,10 +38,19 @@ const proxyUrl = (url: string) => {
 };
 
 export const getIconUrl = (icon: string, mod: string, palette: PaletteDef) => {
-    const frame = typeof palette.frame === "string" ? Colors[palette.frame] : palette.frame;
-    const center = typeof palette.center === "string" ? Colors[palette.center] : palette.center;
-    const modifier = typeof palette.modifier === "string" ? Colors[palette.modifier] : palette.modifier;
+    const frame =
+        typeof palette.frame === "string"
+            ? Colors[palette.frame]
+            : palette.frame;
+    const center =
+        typeof palette.center === "string"
+            ? Colors[palette.center]
+            : palette.center;
+    const modifier =
+        typeof palette.modifier === "string"
+            ? Colors[palette.modifier]
+            : palette.modifier;
     return proxyUrl(
-        `/icon/${icon}.${mod}.${frame.outline.hex}.${frame.fill.hex}.${center.outline.hex}.${center.fill.hex}.${modifier.outline.hex}.${modifier.fill.hex}.png`
+        `/icon/${icon}.${mod}.${frame.outline.hex}.${frame.fill.hex}.${center.outline.hex}.${center.fill.hex}.${modifier.outline.hex}.${modifier.fill.hex}.png`,
     );
-}
+};

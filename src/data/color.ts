@@ -1,20 +1,23 @@
-import { IColor, getColorFromString } from "@fluentui/react"
+import { IColor, getColorFromString } from "@fluentui/react";
 
-const defineColor = (outlineHexString: string, fillHexString: string): ColorDef => {
+const defineColor = (
+    outlineHexString: string,
+    fillHexString: string,
+): ColorDef => {
     return {
         outline: getColorFromString(`#${outlineHexString}`) as IColor,
-        fill: getColorFromString(`#${fillHexString}`) as IColor
+        fill: getColorFromString(`#${fillHexString}`) as IColor,
     };
-}
+};
 
 export const toDisplayName = (name: string): string => {
     return name.replace(/([A-Z])/g, " $1").trim();
-}
+};
 
 export type ColorDef = {
-    outline: IColor,
-    fill: IColor,
-}
+    outline: IColor;
+    fill: IColor;
+};
 
 export const Colors = {
     StandardBlue: defineColor("69a2d5", "c1fefe"),
@@ -38,10 +41,10 @@ export const Colors = {
 export type ColorName = keyof typeof Colors;
 
 export type PaletteDef = {
-    frame: ColorName | ColorDef,
-    center: ColorName | ColorDef,
-    modifier: ColorName | ColorDef,
-}
+    frame: ColorName | ColorDef;
+    center: ColorName | ColorDef;
+    modifier: ColorName | ColorDef;
+};
 
 export const Palettes = {
     StandardBlue: {

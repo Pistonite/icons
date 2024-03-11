@@ -6,17 +6,24 @@ type IconButtonProps = {
     iconPath: string;
 } & IButtonProps;
 
-export const IconButton: React.FC<IconButtonProps> = ({iconPath, ...restProps}) => {
+export const IconButton: React.FC<IconButtonProps> = ({
+    iconPath,
+    ...restProps
+}) => {
     return (
-        <DefaultButton styles={{
-            root: {
-                height: 60,
-                margin: 4,
-            }
-        }}
-        {...restProps}
+        <DefaultButton
+            styles={{
+                root: {
+                    height: 60,
+                    margin: 4,
+                },
+            }}
+            {...restProps}
         >
-            <img src={getIconUrl(iconPath, "none", Palettes.StandardGray)} width={48}/>
+            <img
+                src={getIconUrl(iconPath, "none", Palettes.StandardGray)}
+                width={48}
+            />
         </DefaultButton>
     );
 };

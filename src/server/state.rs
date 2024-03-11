@@ -1,4 +1,4 @@
-use crate::{Icon, HexColors, Palette};
+use crate::{HexColors, Icon, Palette};
 use std::collections::HashMap;
 use std::fs;
 use std::io;
@@ -21,7 +21,12 @@ impl State {
         Ok(Self { icons, modifiers })
     }
 
-    pub async fn make_icon(&self, name: &str, modifier: &str, colors: &HexColors) -> Result<Vec<u8>, &'static str> {
+    pub async fn make_icon(
+        &self,
+        name: &str,
+        modifier: &str,
+        colors: &HexColors,
+    ) -> Result<Vec<u8>, &'static str> {
         let mut icon = self.icons.get(name).cloned().ok_or("Icon not found")?;
 
         if modifier != "none" {
@@ -29,7 +34,9 @@ impl State {
             icon.add_overlay(modifier);
         }
 
-        let palette = Palette::from_hex_async(colors).await.ok_or("Invalid color")?;
+        let palette = Palette::from_hex_async(colors)
+            .await
+            .ok_or("Invalid color")?;
         icon.colorize(&palette)
     }
 

@@ -1,14 +1,3 @@
-set windows-powershell:=true
-
-install:
-    rustup update
-    cargo install cargo-watch
-    cargo install cross
-    npm i
-
-build:
-    npm run build
-
 docker:
     rustup default stable
     cross build --release --target x86_64-unknown-linux-musl
@@ -17,12 +6,3 @@ docker:
     @echo "Run with:"
     @echo
     @echo "docker run -p 8000:80 pistonite/icons"
-
-server:
-    cargo watch -x run
-
-client:
-    npm run dev
-
-clean:
-    rm -rf node_modules target
