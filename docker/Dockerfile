@@ -7,4 +7,4 @@ RUN chmod +x $APP_DIR/bin/start
 
 WORKDIR $APP_DIR
 
-CMD ["./bin/start", "80", "dist/"]
+CMD ["./bin/start", "80", "app/"]
