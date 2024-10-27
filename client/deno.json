@@ -1,6 +1,0 @@
-{
-    "imports": {
-        "@pistonite/pure": "jsr:@pistonite/pure@^0.0.10",
-        "@pistonite/pure-react": "jsr:@pistonite/pure-react@^0.0.2"
-    }
-}

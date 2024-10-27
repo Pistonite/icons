@@ -1,12 +1,12 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@pistonite/pure-react@^0.0.2": "0.0.2",
-    "jsr:@pistonite/pure@^0.0.10": "0.0.10",
     "npm:@eslint/js@^9.13.0": "9.13.0",
     "npm:@fluentui/react-components@^9.55.1": "9.55.1_@types+react@18.3.12_@types+react-dom@18.3.1_react@18.3.1_react-dom@18.3.1__react@18.3.1",
     "npm:@fluentui/react-icons@^2.0.262": "2.0.262_react@18.3.1",
     "npm:@griffel/vite-plugin@~0.1.7": "0.1.7_@griffel+tag-processor@1.0.7_vite@5.4.10_typescript@5.6.3",
+    "npm:@jsr/pistonite__pure-react@^0.0.2": "0.0.2",
+    "npm:@jsr/pistonite__pure@^0.0.10": "0.0.10",
     "npm:@modyfi/vite-plugin-yaml@^1.1.0": "1.1.0_vite@5.4.10",
     "npm:@tanstack/react-query@^5.59.16": "5.59.16_react@18.3.1",
     "npm:@types/react-dom@^18.3.1": "18.3.1",
@@ -31,22 +31,6 @@
     "npm:vite-tsconfig-paths@^5.0.1": "5.0.1_vite@5.4.10_typescript@5.6.3",
     "npm:vite@^5.4.9": "5.4.10",
     "npm:zustand@5": "5.0.0_@types+react@18.3.12_react@18.3.1"
-  },
-  "jsr": {
-    "@pistonite/pure@0.0.10": {
-      "integrity": "8db783fa7b5160b510b4361a0b9fb294edaa3be26c30dca33d4569042ffc462c",
-      "dependencies": [
-        "npm:denque",
-        "npm:file-saver"
-      ]
-    },
-    "@pistonite/pure-react@0.0.2": {
-      "integrity": "4d4baac8c58e36b541dbbc5cc7fe4f3d179e477e2485e4b9c6544b7815686b34",
-      "dependencies": [
-        "jsr:@pistonite/pure",
-        "npm:react@18"
-      ]
-    }
   },
   "npm": {
     "@ampproject/remapping@2.3.0": {
@@ -1567,6 +1551,20 @@
         "@jridgewell/sourcemap-codec"
       ]
     },
+    "@jsr/pistonite__pure-react@0.0.2": {
+      "integrity": "sha512-WI22KER50K56qyJMsfnWUxYPZnsCQ4blLH5iZ9fswxP6kfia3KVAXaNbqPnNp/GimalwIGefmpb4j+sn3hCaAw==",
+      "dependencies": [
+        "@jsr/pistonite__pure",
+        "react"
+      ]
+    },
+    "@jsr/pistonite__pure@0.0.10": {
+      "integrity": "sha512-yy62y5DLh37wf+aWGMCHIYn2R2PUJmwax/sIISCvr2fR5DMtZByhcn8k2YB3ruejBMfDA2E40jEYBNoaBjbH8A==",
+      "dependencies": [
+        "denque",
+        "file-saver"
+      ]
+    },
     "@modyfi/vite-plugin-yaml@1.1.0_vite@5.4.10": {
       "integrity": "sha512-L26xfzkSo1yamODCAtk/ipVlL6OEw2bcJ92zunyHu8zxi7+meV0zefA9xscRMDCsMY8xL3C3wi3DhMiPxcbxbw==",
       "dependencies": [
@@ -2797,16 +2795,14 @@
     }
   },
   "workspace": {
-    "dependencies": [
-      "jsr:@pistonite/pure-react@^0.0.2",
-      "jsr:@pistonite/pure@^0.0.10"
-    ],
     "packageJson": {
       "dependencies": [
         "npm:@eslint/js@^9.13.0",
         "npm:@fluentui/react-components@^9.55.1",
         "npm:@fluentui/react-icons@^2.0.262",
         "npm:@griffel/vite-plugin@~0.1.7",
+        "npm:@jsr/pistonite__pure-react@^0.0.2",
+        "npm:@jsr/pistonite__pure@^0.0.10",
         "npm:@modyfi/vite-plugin-yaml@^1.1.0",
         "npm:@tanstack/react-query@^5.59.16",
         "npm:@types/react-dom@^18.3.1",
