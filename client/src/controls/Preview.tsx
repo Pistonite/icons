@@ -10,12 +10,12 @@ import {
 } from "@fluentui/react-components";
 import { useTranslation } from "react-i18next";
 import { HexColorPicker } from "react-colorful";
+import { useEffect, useState } from "react";
 
 import { getIconUrl, setPreviewBackground, useStore } from "data/store.ts";
 import { ColorCube } from "components/ColorCube.tsx";
 import { useColorPickerStyles } from "components/useColorPickerStyles.ts";
 import { ColorInput } from "components/ColorPickerButton.tsx";
-import { useDeferredValue } from "react";
 
 const useStyles = makeStyles({
     previewContainer: {
@@ -35,6 +35,8 @@ const useStyles = makeStyles({
     },
 });
 
+const PREVIEW_UPDATE_THROTTLE = 100;
+
 export const Preview: React.FC = () => {
     const { t } = useTranslation();
     const restoreFocusAttributes = useRestoreFocusTarget();
@@ -42,7 +44,15 @@ export const Preview: React.FC = () => {
     const previewBackground = useStore((store) => store.previewBackground);
 
     const url = useStore(getIconUrl);
-    const previewUrl = useDeferredValue(url);
+    const [previewUrl, setPreviewUrl] = useState(url);
+    useEffect(() => {
+        if (url != previewUrl) {
+            const handle = setTimeout(() => {
+                setPreviewUrl(url);
+            }, PREVIEW_UPDATE_THROTTLE);
+            return () => clearTimeout(handle);
+        }
+    }, [url, previewUrl]);
 
     const colorPickerStyles = useColorPickerStyles();
     const styles = useStyles();
