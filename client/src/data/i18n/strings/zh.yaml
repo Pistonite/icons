@@ -1,0 +1,141 @@
+title: Pistonite 图标
+
+ui.choose_icon: 选择图标
+ui.choose_modifier: 符号
+ui.choose_palette: 预设颜色
+ui.choose_frame_color: 边框颜色
+ui.choose_center_color: 主要颜色
+ui.choose_modifier_color: 符号颜色
+ui.search: 搜索
+ui.select_color: 请选择一个预设或自定义颜色
+ui.outline_color: 线条
+ui.fill_color: 填充
+ui.choose_preview_background: 预览背景色
+ui.preview: 预览
+ui.option: 选项
+ui.choose_preview_background_hint: 预览背景色仅在预览中显示。下载的图标是透明的。
+ui.copy: 复制
+ui.download_hint: 右键图标保存图标为PNG，或复制下面地址使用
+ui.url: 地址
+ui.copied: 已复制！
+
+modifier.none: 无
+modifier.circle: 圆圈
+modifier.square: 方块
+modifier.minus: 减号
+modifier.plus: 加号
+modifier.triangle: 三角
+
+color.StandardBlue: 标准蓝
+color.StandardOrange: 标准黄
+color.StandardGreen: 标准绿
+color.StandardPink: 标准粉
+color.StandardPurple: 标准紫
+color.StandardGray: 标准灰
+color.MalicePurple: 怨念紫
+color.DeepOrange: 大师橙
+color.MedohGreen: 神兽绿
+color.NaborisOrange: 神兽黄
+color.RutaBlue: 神兽蓝
+color.RudaniaRed: 神兽红
+color.LightGold: 光亮金
+color.DarkGold: 暗黑金
+color.UltraRed: 究极红
+color.FuseBlue: 余料蓝
+color.Custom: （自定义）
+
+palette.StandardBlue: 标准蓝
+palette.StandardOrange: 标准黄
+palette.Incomplete: 半蓝黄
+palette.StandardGreen: 标准绿
+palette.StandardPink: 标准粉
+palette.StandardPurple: 标准紫
+palette.StandardGray: 标准灰
+palette.Malice: 怨念
+palette.MasterCycle: 大师摩托
+palette.Medoh: 风神兽
+palette.Naboris: 雷神兽
+palette.Ruta: 水神兽
+palette.Rudania: 火神兽
+palette.Gold: 金
+palette.DarkGold: 暗金
+palette.UltraRed: 究极红
+palette.FuseBlue: 余料蓝
+palette.Custom: （自定义）
+
+icon.character: 人物
+icon.character.daruk: 达尔克尔
+icon.character.demon_king: 魔王
+icon.character.ganon: 盖农
+icon.character.great_fairy: 大精灵
+icon.character.hestu: 西兰花
+icon.character.impa: 英帕
+icon.character.king: 国王
+icon.character.kohga: 可盖大人
+icon.character.link: 林克
+icon.character.maz_koshia: 导师
+icon.character.mipha: 米法
+icon.character.revali: 力巴尔
+icon.character.riju: 璐菊
+icon.character.sidon: 希多
+icon.character.teba: 特巴
+icon.character.terrako: Terrako
+icon.character.urbosa: 乌尔波扎
+icon.character.yunobo: 阿陨
+icon.character.zelda: 塞尔达
+
+icon.location: 地点
+icon.location.castle: 城堡
+icon.location.fire_temple: 火神殿
+icon.location.house: 房子
+icon.location.lab: 实验室
+icon.location.lightning_temple: 雷神殿
+icon.location.lightroot: 光之根
+icon.location.medoh: 风神兽
+icon.location.naboris: 雷神兽
+icon.location.rudania: 火神兽
+icon.location.ruta: 水神兽
+icon.location.skyview_tower: 瞭望塔
+icon.location.small_castle: 城堡 · 小
+icon.location.sor: 复苏神庙
+icon.location.spirit_temple: 魂神殿
+icon.location.tower: 希卡塔
+icon.location.travel_medallion: 传送标注器
+icon.location.water_temple: 水神殿
+icon.location.wind_temple: 风神殿
+
+icon.misc: 其他
+icon.misc.apple: 苹果
+icon.misc.bow: 弓箭
+icon.misc.double_square: 两方块
+icon.misc.flux_construct: 方块魔像
+icon.misc.frame: 框
+icon.misc.hammer: 锤子
+icon.misc.horse: 马
+icon.misc.korok: 呀哈哈
+icon.misc.monster: 怪物
+icon.misc.pot: 锅
+icon.misc.shield: 盾牌
+icon.misc.square: 方块
+
+icon.rune: 技能
+icon.rune.ascend: 通天术
+icon.rune.camera: 相机
+icon.rune.cryonis: 制冰器
+icon.rune.fuse: 余料建造
+icon.rune.magnesis: 磁铁
+icon.rune.master_cycle_zero: 大师摩托Zero
+icon.rune.recall: 倒转乾坤
+icon.rune.round_bomb: 圆炸弹
+icon.rune.square_bomb: 方炸弹
+icon.rune.stasis: 静止器
+icon.rune.ultrahand: 究极手
+
+icon.shrine: 神庙
+icon.shrine.shrine: 希卡神庙
+icon.shrine.blessing: 祝福神庙
+icon.shrine.dlc_shrine: 神庙 · DLC
+icon.shrine.double_sword: 神庙 · 两把剑
+icon.shrine.sword: 神庙 · 一把剑
+icon.shrine.zonai: 左纳乌神庙
+

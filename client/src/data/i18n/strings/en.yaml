@@ -1,0 +1,141 @@
+title: Pistonite Icons
+
+ui.choose_icon: Choose an icon
+ui.choose_modifier: Select a modifier
+ui.choose_palette: Select a palette
+ui.choose_frame_color: Change frame color
+ui.choose_center_color: Change center color
+ui.choose_modifier_color: Change modifier color
+ui.search: Search
+ui.select_color: Select a built-in color or pick your own
+ui.outline_color: Outline
+ui.fill_color: Fill
+ui.choose_preview_background: Preview background
+ui.preview: Preview
+ui.option: Options
+ui.choose_preview_background_hint: The background is only in the preview and not in the downloaded icon.
+ui.copy: Copy
+ui.download_hint: Download the icon by right clicking the preview and select "Save image as...", or copy the URL to use it somewhere else.
+ui.url: URL
+ui.copied: Copied!
+
+modifier.none: None
+modifier.circle: Circle
+modifier.square: Square
+modifier.minus: Minus
+modifier.plus: Plus
+modifier.triangle: Triangle
+
+color.StandardBlue: Standard Blue
+color.StandardOrange: Standard Orange
+color.StandardGreen: Standard Green
+color.StandardPink: Standard Pink
+color.StandardPurple: Standard Purple
+color.StandardGray: Standard Gray
+color.MalicePurple: Malice Purple
+color.DeepOrange: Deep Orange
+color.MedohGreen: Medoh Green
+color.NaborisOrange: Naboris Orange
+color.RutaBlue: Ruta Blue
+color.RudaniaRed: Rudania Red
+color.LightGold: Light Gold
+color.DarkGold: Dark Gold
+color.UltraRed: Ultra Red
+color.FuseBlue: Fuse Blue
+color.Custom: (Custom)
+
+palette.StandardBlue: Standard Blue
+palette.StandardOrange: Standard Orange
+palette.Incomplete: Incomplete
+palette.StandardGreen: Standard Green
+palette.StandardPink: Standard Pink
+palette.StandardPurple: Standard Purple
+palette.StandardGray: Standard Gray
+palette.Malice: Malice
+palette.MasterCycle: Master Cycle
+palette.Medoh: Medoh
+palette.Naboris: Naboris
+palette.Ruta: Ruta
+palette.Rudania: Rudania
+palette.Gold: Gold
+palette.DarkGold: Dark Gold
+palette.UltraRed: Ultra Red
+palette.FuseBlue: Fuse Blue
+palette.Custom: (Custom)
+
+icon.character: Character
+icon.character.daruk: Daruk
+icon.character.demon_king: Demon King
+icon.character.ganon: Ganon
+icon.character.great_fairy: Great Fairy
+icon.character.hestu: Hestu
+icon.character.impa: Impa
+icon.character.king: King
+icon.character.kohga: Master Kohga
+icon.character.link: Link
+icon.character.maz_koshia: Maz Koshia
+icon.character.mipha: Mipha
+icon.character.revali: Revali
+icon.character.riju: Riju
+icon.character.sidon: Sidon
+icon.character.teba: Teba
+icon.character.terrako: Terrako
+icon.character.urbosa: Urbosa
+icon.character.yunobo: Yunobo
+icon.character.zelda: Zelda
+
+icon.location: Location
+icon.location.castle: Castle
+icon.location.fire_temple: Fire Temple
+icon.location.house: House
+icon.location.lab: Lab
+icon.location.lightning_temple: Lightning Temple
+icon.location.lightroot: Lightroot
+icon.location.medoh: Medoh
+icon.location.naboris: Naboris
+icon.location.rudania: Rudania
+icon.location.ruta: Ruta
+icon.location.skyview_tower: Skyview Tower
+icon.location.small_castle: Castle (Small)
+icon.location.sor: S.O.R.
+icon.location.spirit_temple: Spirit Temple
+icon.location.tower: Sheika Tower
+icon.location.travel_medallion: Travel Medallion
+icon.location.water_temple: Water Temple
+icon.location.wind_temple: Wind Temple
+
+icon.misc: Miscellanous
+icon.misc.apple: Apple
+icon.misc.bow: Bow
+icon.misc.double_square: Double Square
+icon.misc.flux_construct: Flux Construct
+icon.misc.frame: Frame
+icon.misc.hammer: Hammer
+icon.misc.horse: Horse
+icon.misc.korok: Korok
+icon.misc.monster: Monster
+icon.misc.pot: Pot
+icon.misc.shield: Shield
+icon.misc.square: Square
+
+icon.rune: Rune
+icon.rune.ascend: Ascend
+icon.rune.camera: Camera
+icon.rune.cryonis: Cryonis
+icon.rune.fuse: Fuse
+icon.rune.magnesis: Magnesis
+icon.rune.master_cycle_zero: Master Cycle Zero
+icon.rune.recall: Recall
+icon.rune.round_bomb: Round Bomb
+icon.rune.square_bomb: Square Bomb
+icon.rune.stasis: Stasis
+icon.rune.ultrahand: Ultra Hand
+
+icon.shrine: Shrine
+icon.shrine.shrine: Shrine (Sheika)
+icon.shrine.blessing: Blessing
+icon.shrine.dlc_shrine: Shrine (DLC)
+icon.shrine.double_sword: Shrine (Sword x2)
+icon.shrine.sword: Shrine (Sword)
+icon.shrine.zonai: Shrine (Zonai)
+

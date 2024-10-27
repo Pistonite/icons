@@ -1,70 +1,11 @@
 version: '3'
 
-tasks:
-  install:
-    desc: Install tools and dependencies
-    cmds:
-    - rustup update
-    - cargo install cargo-watch
-    - npm i
+includes:
+  server:
+    taskfile: ./server
+    dir: ./server
 
-  client:dev:
-    desc: Run client in watch mode
-    cmds:
-    - npx vite -- --host
-
-  client:build:
-    desc: Build client
-    cmds:
-    - npx tsc
-    - npx vite build
-
-  client:check:
-    desc: Check for lint and format errors
-    cmds:
-    # - task: client:eslint
-    #   vars:
-    #     ESLINT_ARGS: ""
-    - task: client:prettier
-      vars:
-        PRETTIER_ARGS: --check 
-
-  client:fix:
-    desc: Fix lint and format errors
-    cmds:
-    - task: client:prettier
-      vars:
-        PRETTIER_ARGS: --write 
-    # - task: client:eslint
-    #   vars:
-    #     ESLINT_ARGS: --fix
-  
-  client:prettier:
-    cmds:
-    - npx prettier "./**/*.{ts,tsx,json,js,jsx,cjs,css}" {{.PRETTIER_ARGS}}
-
-  client:eslint:
-    cmds:
-    - npx eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --cache {{.ESLINT_ARGS}}
-
-  server:dev:
-    desc: Run server in watch mode
-    cmds:
-    - cargo watch -x run
-
-  server:build:
-    desc: Build server
-    cmds:
-    - cargo build --release
-
-  server:check:
-    desc: Check for lint and format errors
-    cmds:
-    - cargo clippy -- -D warnings -D clippy::todo
-    -  cargo fmt --check
-
-  server:fix:
-    desc: Fix lint and format errors
-    cmds:
-    - cargo fmt --all
+  client:
+    taskfile: ./client
+    dir: ./client
 
