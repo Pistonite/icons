@@ -204,5 +204,5 @@ func main() {
 		return ctx.Send(data)
 	})
 
-	app.Listen(":" + env.Port)
+	log.Fatal(app.Listen(":" + env.Port))
 }
