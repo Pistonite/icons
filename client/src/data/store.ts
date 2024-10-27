@@ -33,7 +33,7 @@ export type Store = {
 export const useStore = create<Store>()(() => ({
     selectedIcon: "shrine.shrine",
     selectedModifier: "none",
-    selectedPalette: "Incomplete",
+    selectedPalette: "StandardBlue",
 
     selectedFrameColor: undefined,
     selectedCenterColor: undefined,
@@ -326,14 +326,15 @@ export const getIconUrl = createSelector(
 export const getIconUrlCreator = createSelector(
     [
         (store: Store) => store.selectedModifier,
-        getFrameOutlineColor,
-        getFrameFillColor,
-        getCenterOutlineColor,
-        getCenterFillColor,
-        getModifierOutlineColor,
-        getModifierFillColor,
     ],
-    (modifier, fo, ff, co, cf, mo, mf) => {
+    (modifier) => {
+        const palette = Palettes.Incomplete;
+        const fo = Colors[palette.frame].outline;
+        const ff = Colors[palette.frame].fill;
+        const co = Colors[palette.center].outline;
+        const cf = Colors[palette.center].fill;
+        const mo = Colors[palette.modifier].outline;
+        const mf = Colors[palette.modifier].fill;
         return (icon: string) =>
             createIconUrl(icon, modifier, fo, ff, co, cf, mo, mf);
     },

@@ -25,6 +25,7 @@ jobs:
         workflow: build.yml
         commit: ${{ github.sha }}
         path: server/dist
+    - run: cp -r img server/dist
     - uses: docker/login-action@v3
       with:
         registry: ${{ env.REGISTRY }}

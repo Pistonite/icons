@@ -41,6 +41,7 @@ tasks:
       - .env
     cmds:
       - magnesis -o dist
+      - cp -r ../img dist
 
   container:
     desc: Build the Docker container
@@ -50,7 +51,7 @@ tasks:
   run:
     desc: Run the Docker container
     cmds:
-      - docker run -d -p 8000:80 pistonite/icons:latest
+      - docker run -p 8000:80 pistonite/icons:latest
 
   connect:
     desc: Connect to the running Docker container
@@ -60,7 +61,7 @@ tasks:
   stop:
     desc: Stop the running Docker container
     cmds:
-      - docker stop $(docker ps ls -q -a --filter ancestor=pistonite/icons)
+      - docker stop $(docker ps -q -a --filter ancestor=pistonite/icons)
 
   clean:
     desc: Clean the containers

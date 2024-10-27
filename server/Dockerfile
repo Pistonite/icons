@@ -2,7 +2,6 @@ FROM alpine:latest
 EXPOSE 80
 ENV APP_DIR=/iconss
 COPY ./dist $APP_DIR
-COPY ../img $APP_DIR/img
 RUN chmod +x $APP_DIR/bin/iconss
 
 WORKDIR $APP_DIR
