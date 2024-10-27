@@ -18,9 +18,9 @@ export const ChangeLanguage: React.FC = () => {
     return (
         <Menu
             checkedValues={{ locale: [locale] }}
-            onCheckedValueChange={(_, { checkedItems }) => {
+            onCheckedValueChange={async (_, { checkedItems }) => {
                 setLocale(checkedItems[0]);
-                i18next.changeLanguage(checkedItems[0]);
+                await i18next.changeLanguage(checkedItems[0]);
                 document.title = i18next.t("title");
             }}
         >
