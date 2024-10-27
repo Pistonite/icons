@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 
 export type Metadata = {
-    icons: string[],
-    modifiers: string[]
-}
+    icons: string[];
+    modifiers: string[];
+};
 
 export const useFetchMetadata = () => {
     const { isLoading, isError, data } = useQuery({

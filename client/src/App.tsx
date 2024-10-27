@@ -1,20 +1,20 @@
-import { makeStyles } from '@fluentui/react-components';
+import { makeStyles } from "@fluentui/react-components";
 
-import { ChangeModifierColor } from 'controls/ChangeModifierColor.tsx';
-import { ChangeCenterColor } from 'controls/ChangeCenterColor.tsx';
-import { ChangeFrameColor } from 'controls/ChangeFrameColor.tsx';
-import { Preview } from 'controls/Preview.tsx';
-import { CopyUrl } from 'controls/CopyUrl.tsx';
-import { ChoosePalette } from 'controls/ChoosePalette.tsx';
-import { ChooseModifier } from 'controls/ChooseModifier.tsx';
-import { ChooseIcon } from 'controls/ChooseIcon.tsx';
-import { ChangeLanguage } from 'controls/ChangeLanguage.tsx';
-import { ChangeDark } from 'controls/ChangeDark.tsx';
-import { GotoGitHub } from 'controls/GotoGitHub.tsx';
+import { ChangeModifierColor } from "controls/ChangeModifierColor.tsx";
+import { ChangeCenterColor } from "controls/ChangeCenterColor.tsx";
+import { ChangeFrameColor } from "controls/ChangeFrameColor.tsx";
+import { Preview } from "controls/Preview.tsx";
+import { CopyUrl } from "controls/CopyUrl.tsx";
+import { ChoosePalette } from "controls/ChoosePalette.tsx";
+import { ChooseModifier } from "controls/ChooseModifier.tsx";
+import { ChooseIcon } from "controls/ChooseIcon.tsx";
+import { ChangeLanguage } from "controls/ChangeLanguage.tsx";
+import { ChangeDark } from "controls/ChangeDark.tsx";
+import { GotoGitHub } from "controls/GotoGitHub.tsx";
 
 const useStyles = makeStyles({
     rootLayout: {
-            display: "flex",
+        display: "flex",
         containerType: "size",
         containerName: "foo",
         height: "100vh",
@@ -44,39 +44,35 @@ const useStyles = makeStyles({
         top: "10px",
         display: "flex",
         gap: "8px",
-    }
+    },
 });
 
-const App:React.FC = () => {
+const App: React.FC = () => {
     const styles = useStyles();
 
-  return (
+    return (
         <>
-                <div className={styles.actionContainer}>
-                    <ChangeDark />
-                    <GotoGitHub />
-                    <ChangeLanguage />
-                </div>
-    <div className={styles.rootLayout}>
-      <div className={styles.searchContainer}>
-                <ChooseIcon />
-      </div>
-            <div className={styles.configContainer}>
-                <ChooseModifier />
-                <ChoosePalette />
-                <ChangeFrameColor />
-                <ChangeCenterColor />
-                <ChangeModifierColor />
-                    <Preview />
-                <CopyUrl />
-
+            <div className={styles.actionContainer}>
+                <ChangeDark />
+                <GotoGitHub />
+                <ChangeLanguage />
             </div>
-    </div>
-    </>
-  )
-}
+            <div className={styles.rootLayout}>
+                <div className={styles.searchContainer}>
+                    <ChooseIcon />
+                </div>
+                <div className={styles.configContainer}>
+                    <ChooseModifier />
+                    <ChoosePalette />
+                    <ChangeFrameColor />
+                    <ChangeCenterColor />
+                    <ChangeModifierColor />
+                    <Preview />
+                    <CopyUrl />
+                </div>
+            </div>
+        </>
+    );
+};
 
-
-
-
-export default App
+export default App;

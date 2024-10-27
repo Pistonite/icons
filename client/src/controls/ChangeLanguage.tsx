@@ -1,4 +1,11 @@
-import { Menu, MenuButton, MenuItemRadio, MenuList, MenuPopover, MenuTrigger } from "@fluentui/react-components";
+import {
+    Menu,
+    MenuButton,
+    MenuItemRadio,
+    MenuList,
+    MenuPopover,
+    MenuTrigger,
+} from "@fluentui/react-components";
 import { Globe20Regular } from "@fluentui/react-icons";
 import { getLocale } from "@pistonite/pure/pref";
 import { useState } from "react";
@@ -9,7 +16,7 @@ import { getLocalizedLanguageName, SupportedLanguages } from "data/i18n";
 export const ChangeLanguage: React.FC = () => {
     const [locale, setLocale] = useState(getLocale);
     return (
-         <Menu
+        <Menu
             checkedValues={{ locale: [locale] }}
             onCheckedValueChange={(_, { checkedItems }) => {
                 setLocale(checkedItems[0]);
@@ -30,5 +37,5 @@ export const ChangeLanguage: React.FC = () => {
                 </MenuList>
             </MenuPopover>
         </Menu>
-    )
-}
+    );
+};

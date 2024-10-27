@@ -6,7 +6,7 @@ export type SelectIconButtonProps = {
     url: string;
     setIconName: (iconName: string) => void;
     selected: boolean;
-}
+};
 
 const useStyles = makeStyles({
     button: {
@@ -14,23 +14,31 @@ const useStyles = makeStyles({
         width: "200px",
         justifyContent: "start",
         margin: "4px",
-    }
+    },
 });
 
-export const SelectIconButton: React.FC<SelectIconButtonProps> = ({ iconName, url, setIconName, selected }) => {
-    const {t} = useTranslation();
+export const SelectIconButton: React.FC<SelectIconButtonProps> = ({
+    iconName,
+    url,
+    setIconName,
+    selected,
+}) => {
+    const { t } = useTranslation();
     const category = iconName.split(".", 1)[0];
     const styles = useStyles();
     return (
-    <CompoundButton
+        <CompoundButton
             className={styles.button}
             secondaryContent={t(`icon.${category}`)}
-            icon={<div><img src={url} width={48} height={48}/></div>}
+            icon={
+                <div>
+                    <img src={url} width={48} height={48} />
+                </div>
+            }
             onClick={() => setIconName(iconName)}
             appearance={selected ? "primary" : "secondary"}
-
         >
             {t(`icon.${iconName}`)}
-    </CompoundButton>
+        </CompoundButton>
     );
-}
+};

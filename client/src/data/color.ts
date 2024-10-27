@@ -1,4 +1,3 @@
-
 /** Definition of a color */
 export type ColorDef = {
     /** hex color for outline (prefixed with #) */
@@ -7,13 +6,10 @@ export type ColorDef = {
     fill: string;
 };
 
-const defineColor = (
-    outline: string,
-    fill: string,
-): ColorDef => {
+const defineColor = (outline: string, fill: string): ColorDef => {
     return {
         outline: `#${outline}`,
-        fill: `#${fill}`
+        fill: `#${fill}`,
     };
 };
 

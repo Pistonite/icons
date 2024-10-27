@@ -1,4 +1,9 @@
-import { FluentProvider, makeStaticStyles, webDarkTheme, webLightTheme } from "@fluentui/react-components";
+import {
+    FluentProvider,
+    makeStaticStyles,
+    webDarkTheme,
+    webLightTheme,
+} from "@fluentui/react-components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { useDark } from "components/useDark.ts";
@@ -14,10 +19,10 @@ const useStaticStyles = makeStaticStyles({
         minHeight: 0,
         minWidth: 0,
     },
-    ".react-colorful" : {
+    ".react-colorful": {
         paddingTop: "16px",
         paddingBottom: "8px",
-    }
+    },
 });
 
 const queryClient = new QueryClient();
@@ -29,10 +34,9 @@ export const AppWrapper: React.FC = () => {
 
     return (
         <QueryClientProvider client={queryClient}>
-    <FluentProvider theme={isDark?webDarkTheme:webLightTheme}>
-            <App />
-    </FluentProvider>
-    </QueryClientProvider>
+            <FluentProvider theme={isDark ? webDarkTheme : webLightTheme}>
+                <App />
+            </FluentProvider>
+        </QueryClientProvider>
     );
-}
-
+};

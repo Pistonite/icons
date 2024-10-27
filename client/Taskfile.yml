@@ -34,7 +34,7 @@ tasks:
 
   eslint:
     cmds:
-      - npx eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --cache {{.ESLINT_ARGS}}
+      - npx eslint src --report-unused-disable-directives --max-warnings 0 --cache {{.ESLINT_ARGS}}
 
   prettier:
     cmds:

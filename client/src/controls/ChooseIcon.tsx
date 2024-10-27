@@ -11,8 +11,8 @@ const useStyles = makeStyles({
         overflowX: "hidden",
         overflowY: "auto",
         flex: 1,
-    }
-})
+    },
+});
 
 export const ChooseIcon: React.FC = () => {
     const { icons } = useFetchMetadata();
@@ -37,32 +37,29 @@ export const ChooseIcon: React.FC = () => {
                 return true;
             }
             return false;
-        })
+        });
     }, [deferredSearch, icons, t]);
 
     const styles = useStyles();
-    
 
     return (
         <>
-                <div role="search">
-                    <Field
-                        label={t("ui.choose_icon")}
-                    >
-                        <SearchBox 
+            <div role="search">
+                <Field label={t("ui.choose_icon")}>
+                    <SearchBox
                         value={search}
-                        onChange={(_, {value}) => setSearch(value)}
+                        onChange={(_, { value }) => setSearch(value)}
                         placeholder={t("ui.search")}
                     />
-                    </Field>
-                </div>
-                <div className={styles.iconList}>
+                </Field>
+            </div>
+            <div className={styles.iconList}>
                 <div>
-                        {filteredIcons.map((icon) => (
+                    {filteredIcons.map((icon) => (
                         <IconOption key={icon} icon={icon} />
-                        ))}
+                    ))}
                 </div>
-                </div>
+            </div>
         </>
     );
-}
+};

@@ -8,5 +8,5 @@ export const useColorPickerStyles = makeStyles({
     colorPickerContainer: {
         display: "flex",
         gap: "10px",
-    }
-})
+    },
+});
