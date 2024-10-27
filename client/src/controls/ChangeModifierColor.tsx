@@ -2,6 +2,7 @@ import { Field } from "@fluentui/react-components";
 import { useTranslation } from "react-i18next";
 
 import {
+    getIconUrl,
     getModifierColorName,
     getModifierFillColor,
     getModifierOutlineColor,
@@ -20,6 +21,8 @@ export const ChangeModifierColor: React.FC = () => {
     const modifierColorName = useStore(getModifierColorName);
     const modifierOutlineColor = useStore(getModifierOutlineColor);
     const modifierFillColor = useStore(getModifierFillColor);
+    const previewBackground = useStore((store) => store.previewBackground);
+    const url = useStore(getIconUrl);
 
     return (
         <Field label={t("ui.choose_modifier_color")}>
@@ -31,6 +34,8 @@ export const ChangeModifierColor: React.FC = () => {
                 setOutlineColor={setCustomModifierOutlineColor}
                 setFillColor={setCustomModifierFillColor}
                 setColorName={selectModifierColor}
+                previewBackground={previewBackground}
+                previewUrl={url}
             />
         </Field>
     );

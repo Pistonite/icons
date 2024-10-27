@@ -12,37 +12,40 @@ jobs:
     name: Build Client
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: arduino/setup-task@v2
-      with:
-        version: 3.x
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 20.x
-    - run: npm ci
-      working-directory: client
-    - run: task client:build --output group
-    - uses: actions/upload-artifact@v4
-      with:
-        path: client/dist
-        name: app
-        retention-days: 3
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-task@v2
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v2.x
+      - run: deno install --frozen
+        working-directory: client
+      - run: task client:build --output group
+      - uses: actions/upload-artifact@v4
+        with:
+          path: client/dist
+          name: app
+          retention-days: 3
 
   build-server:
     name: Build Server
     runs-on: ubuntu-latest
     container: golang:alpine
     steps:
-    - uses: actions/checkout@v4
-    - uses: arduino/setup-task@v2
-      with:
-        version: 3.x
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: actions/setup-go@v5
-    - run: task server:build
-    - uses: actions/upload-artifact@v4
-      with:
-        path: server/build/iconss
-        name: bin
-        retention-days: 3
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-task@v2
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-go@v5
+      - run: task server:build
+      - uses: actions/upload-artifact@v4
+        with:
+          path: server/build/iconss
+          name: bin
+          retention-days: 3

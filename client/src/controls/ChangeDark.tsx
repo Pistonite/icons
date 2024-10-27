@@ -4,8 +4,7 @@ import {
     WeatherSunny20Regular,
 } from "@fluentui/react-icons";
 import { setDark } from "@pistonite/pure/pref";
-
-import { useDark } from "components/useDark.ts";
+import { useDark } from "@pistonite/pure-react";
 
 export const ChangeDark: React.FC = () => {
     const dark = useDark();

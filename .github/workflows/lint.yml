@@ -12,26 +12,29 @@ jobs:
     name: Check Client
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: arduino/setup-task@v2
-      with:
-        version: 3.x
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 20.x
-    - run: npm ci
-      working-directory: client
-    - run: task client:check
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-task@v2
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v2.x
+      - run: deno install --frozen
+        working-directory: client
+      - run: task client:check
 
   lint-go:
     name: Check Server
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: arduino/setup-task@v2
-      with:
-        version: 3.x
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: actions/setup-go@v5
-    - run: task server:check
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-task@v2
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-go@v5
+      - run: task server:check
