@@ -10,6 +10,7 @@ import {
     setCustomCenterOutlineColor,
     setCustomCenterFillColor,
     selectCenterColor,
+    getIconUrl,
 } from "data/store.ts";
 import { ColorPickerButton } from "components/ColorPickerButton.tsx";
 
@@ -20,6 +21,8 @@ export const ChangeCenterColor: React.FC = () => {
     const centerColorName = useStore(getCenterColorName);
     const centerOutlineColor = useStore(getCenterOutlineColor);
     const centerFillColor = useStore(getCenterFillColor);
+    const previewBackground = useStore((store) => store.previewBackground);
+    const url = useStore(getIconUrl);
 
     return (
         <Field label={t("ui.choose_center_color")}>
@@ -31,6 +34,8 @@ export const ChangeCenterColor: React.FC = () => {
                 setOutlineColor={setCustomCenterOutlineColor}
                 setFillColor={setCustomCenterFillColor}
                 setColorName={selectCenterColor}
+                previewBackground={previewBackground}
+                previewUrl={url}
             />
         </Field>
     );

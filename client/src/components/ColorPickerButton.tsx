@@ -17,6 +17,7 @@ import { type ColorName, ColorNames, Colors } from "data/color.ts";
 
 import { ColorCube } from "./ColorCube.tsx";
 import { useColorPickerStyles } from "./useColorPickerStyles.ts";
+import { PreviewIcon } from "./PreviewIcon.tsx";
 
 export type ColorPickerButtonProps = {
     isCustom: boolean;
@@ -26,6 +27,8 @@ export type ColorPickerButtonProps = {
     setOutlineColor: (color: string) => void;
     setFillColor: (color: string) => void;
     setColorName: (color: ColorName) => void;
+    previewBackground: string;
+    previewUrl: string;
 };
 
 export const ColorPickerButton: React.FC<ColorPickerButtonProps> = ({
@@ -36,12 +39,14 @@ export const ColorPickerButton: React.FC<ColorPickerButtonProps> = ({
     setOutlineColor,
     setFillColor,
     setColorName,
+    previewBackground,
+    previewUrl,
 }) => {
     const styles = useColorPickerStyles();
     const { t } = useTranslation();
     const restoreFocusAttributes = useRestoreFocusTarget();
     return (
-        <Popover withArrow trapFocus positioning="before">
+        <Popover withArrow trapFocus positioning="below">
             <PopoverTrigger disableButtonEnhancement>
                 <Button className={styles.button} {...restoreFocusAttributes}>
                     <ColorCube color={selectedOutlineColor} />
@@ -99,6 +104,7 @@ export const ColorPickerButton: React.FC<ColorPickerButtonProps> = ({
                         />
                     </Field>
                 </div>
+                <PreviewIcon background={previewBackground} url={previewUrl} />
             </PopoverSurface>
         </Popover>
     );

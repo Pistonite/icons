@@ -133,8 +133,12 @@ func main() {
 		return ctx.JSON(meta)
 	})
 
+	// serve frontend
 	app.Get("/", func(ctx *fiber.Ctx) error {
-		return ctx.Redirect("/index.html")
+		return ctx.SendFile(path.Join(env.AppPath, "index.html"))
+	})
+	app.Get("/index.html", func(ctx *fiber.Ctx) error {
+		return ctx.Redirect("/")
 	})
 	app.Static("/", env.AppPath, fiber.Static{
 		Compress: true,

@@ -4,9 +4,9 @@ import {
     webDarkTheme,
     webLightTheme,
 } from "@fluentui/react-components";
+import { useDark } from "@pistonite/pure-react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import { useDark } from "components/useDark.ts";
 import App from "./App.tsx";
 
 const useStaticStyles = makeStaticStyles({

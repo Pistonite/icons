@@ -1,6 +1,5 @@
 import { Button } from "@fluentui/react-components";
-
-import { useDark } from "components/useDark.ts";
+import { useDark } from "@pistonite/pure-react";
 
 export const GotoGitHub: React.FC = () => {
     const dark = useDark();

@@ -5,6 +5,7 @@ import {
     getFrameColorName,
     getFrameFillColor,
     getFrameOutlineColor,
+    getIconUrl,
     isFrameColorCustom,
     selectFrameColor,
     setCustomFrameFillColor,
@@ -20,6 +21,8 @@ export const ChangeFrameColor: React.FC = () => {
     const frameColorName = useStore(getFrameColorName);
     const frameOutlineColor = useStore(getFrameOutlineColor);
     const frameFillColor = useStore(getFrameFillColor);
+    const previewBackground = useStore((store) => store.previewBackground);
+    const url = useStore(getIconUrl);
 
     return (
         <Field label={t("ui.choose_frame_color")}>
@@ -31,6 +34,8 @@ export const ChangeFrameColor: React.FC = () => {
                 setOutlineColor={setCustomFrameOutlineColor}
                 setFillColor={setCustomFrameFillColor}
                 setColorName={selectFrameColor}
+                previewBackground={previewBackground}
+                previewUrl={url}
             />
         </Field>
     );
