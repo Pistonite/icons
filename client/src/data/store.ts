@@ -324,9 +324,7 @@ export const getIconUrl = createSelector(
 );
 
 export const getIconUrlCreator = createSelector(
-    [
-        (store: Store) => store.selectedModifier,
-    ],
+    [(store: Store) => store.selectedModifier],
     (modifier) => {
         const palette = Palettes.Incomplete;
         const fo = Colors[palette.frame].outline;
