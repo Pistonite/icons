@@ -19,7 +19,7 @@ jobs:
       packages: write
     steps:
     - uses: actions/checkout@v4
-    - uses: dawidd6/action-download-artifact@v3
+    - uses: dawidd6/action-download-artifact@v6
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         workflow: build.yml
